@@ -4,4 +4,6 @@ jdk:
   - oraclejdk7
   
 sudo: false
-script: cd Java/OpenmlWeka ant -buildfile build_package.xml make_package -DpackageName=OpenmlWeka
+before_script: cd Java/OpenmlWeka 
+script: ant -buildfile build_package.xml make_package -DpackageName=OpenmlWeka
+after_script: ant -buildfile build_package.xml test

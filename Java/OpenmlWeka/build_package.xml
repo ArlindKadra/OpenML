@@ -132,6 +132,16 @@
        </fileset>
      </copy>
   </target>
+  
+  <target name="test" depends="compileTest">
+	<junit>    
+		<batchtest>
+			<fileset dir="${build}/testcases">
+				<include name="**/*Test*.java" />
+			</fileset>
+		</batchtest>
+	</junit>
+  </target>   
 
   <!-- Put everything in ${build}/testcases into the ${package}-tests.jar file -->
   <target name="jar_tests" depends="compile_tests, init_dist"
