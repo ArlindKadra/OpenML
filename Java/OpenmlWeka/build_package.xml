@@ -133,7 +133,7 @@
      </copy>
   </target>
   
-  <target name="test" depends="compileTest">
+  <target name="test" depends="compile_tests">
 	<junit>    
 		<batchtest>
 			<fileset dir="${build}/testcases">
